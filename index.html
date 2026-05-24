@@ -1,15 +1,12 @@
 <!doctype html>
 <html lang="ru">
   <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
-    />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" >
     <title>Mesto</title>
-    <script type="module" crossorigin src="./assets/index-BgDStdrG.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-Dp-GkSZY.css">
+    <script type="module" crossorigin src="./assets/index-Ct9mXSnP.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-DU1Tj3Qh.css">
   </head>
   <body class="page">
     <div class="page__content">
@@ -18,7 +15,7 @@
           src="./assets/logo-C_QQpFK1.svg"
           alt="Логотип проекта место"
           class="logo header__logo"
-        />
+        >
       </header>
       <main class="content">
         <section class="profile page__section">
@@ -35,7 +32,7 @@
         </section>
       </main>
       <footer class="footer page__section">
-        <p class="footer__copyright">© 2026 Mesto Russia</p>
+        <p class="footer__copyright">© 2025 Mesto Russia</p>
       </footer>
 
       <div class="popup popup_type_edit">
@@ -52,13 +49,12 @@
                 placeholder="Имя"
                 minlength="2"
                 maxlength="40"
-                data-pattern="^[A-Za-zА-Яа-яЁё\s-]+$"
+                pattern="^[A-Za-zА-Яа-яЁё\-\s]+$"
                 data-error-message="Разрешены только латинские, кириллические буквы, знаки дефиса и пробелы"
                 required
-              />
+              >
+              <span class="popup__error" id="user-name-error"></span>
             </label>
-            <span class="popup__error" id="user-name-error"></span>
-
             <label class="popup__label">
               <input
                 type="text"
@@ -69,9 +65,9 @@
                 minlength="2"
                 maxlength="200"
                 required
-              />
+              >
+              <span class="popup__error" id="user-description-error"></span>
             </label>
-            <span class="popup__error" id="user-description-error"></span>
             <button
               type="submit"
               class="button popup__button popup__button_disabled"
@@ -97,13 +93,12 @@
                 placeholder="Название"
                 minlength="2"
                 maxlength="30"
-                ddata-pattern="^[A-Za-zА-Яа-яЁё\s-]+$"
+                pattern="^[A-Za-zА-Яа-яЁё\-\s]+$"
                 data-error-message="Разрешены только латинские, кириллические буквы, знаки дефиса и пробелы"
                 required
-              />
+              >
+              <span class="popup__error" id="place-name-error"></span>
             </label>
-            <span class="popup__error" id="place-name-error"></span>
-
             <label class="popup__label">
               <input
                 type="url"
@@ -112,10 +107,9 @@
                 class="popup__input popup__input_type_url"
                 placeholder="Ссылка на картинку"
                 required
-              />
+              >
+              <span class="popup__error" id="place-link-error"></span>
             </label>
-            <span class="popup__error" id="place-link-error"></span>
-
             <button
               type="submit"
               class="button popup__button popup__button_disabled"
@@ -130,7 +124,7 @@
       <div class="popup popup_type_image">
         <div class="popup__content popup__content_content_image">
           <button type="button" class="popup__close"></button>
-          <img src="#" alt="" class="popup__image" />
+          <img src="#" alt="" class="popup__image" >
           <p class="popup__caption"></p>
         </div>
       </div>
@@ -148,10 +142,9 @@
                 class="popup__input popup__input_type_avatar"
                 placeholder="Ссылка на изображение"
                 required
-              />
+              >
+              <span class="popup__error" id="user-avatar-error"></span>
             </label>
-            <span class="popup__error" id="user-avatar-error"></span>
-
             <button
               type="submit"
               class="button popup__button popup__button_disabled"
@@ -163,12 +156,22 @@
         </div>
       </div>
 
+      <div class="popup popup_type_remove-card">
+        <div class="popup__content">
+          <button type="button" class="popup__close"></button>
+          <h3 class="popup__title">Вы уверены?</h3>
+          <form class="popup__form" name="remove-card" novalidate>
+            <button type="submit" class="button popup__button">Да</button>
+          </form>
+        </div>
+      </div>
+
       <div class="popup popup_type_info">
         <div class="popup__content popup__content_content_info">
           <button type="button" class="popup__close"></button>
-          <h3 class="popup__title"></h3>
+          <h3 class="popup__title">Статистика пользователей</h3>
           <dl class="popup__info"></dl>
-          <h4 class="popup__text"></h4>
+          <h4 class="popup__text">Все пользователи:</h4>
           <ul class="popup__list"></ul>
         </div>
       </div>
@@ -177,7 +180,7 @@
 
     <template id="card-template">
       <li class="places__item card">
-        <img class="card__image" src="#" alt="" />
+        <img class="card__image"  alt="" >
         <div class="card__control">
           <button
             type="button"
